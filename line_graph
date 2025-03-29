@@ -1,5 +1,5 @@
-//library:matplotlib
+#library:matplotlib
 
-//solid line
+#solid line
 
-//dotted line
+#dotted line
