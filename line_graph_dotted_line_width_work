@@ -19,7 +19,7 @@ import numpy as np #changing numpy into a workable function, numpy is short for 
 
 ypoints = np.array([3, 17, 4, 9,14]) #our points to plot, very cool to think of how we will eventually have to automically import data
 
-plt.plot(ypoints, color = 'y', linewidth = "22") #y for mustard yellow, g for green, b for blue, r for red so it's probably one letter for all the primary colors
+plt.plot(ypoints, color = 'y',linestyle = 'dotted', linewidth = "22") #y for mustard yellow, g for green, b for blue, r for red so it's probably one letter for all the primary colors
 
 #--end of y point work --
 
