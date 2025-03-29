@@ -3,7 +3,6 @@
 #solid line
 
 #--beginning of imports without assigning them to any roles--
-#Three lines to make our compiler able to draw:
 import sys
 import matplotlib
 #--end of imports without assigning them to any roles--
@@ -15,9 +14,9 @@ import numpy as np
 
 ypoints = np.array([3, 8, 1, 10])
 
-plt.plot(ypoints, color = 'r')
+plt.plot(ypoints, color = 'b') #b for blue, r for red so it's probably one letter for all the primary colors
 plt.show()
 
-#Two  lines to make our compiler able to draw:
+#Two  lines to make our compiler output the chart/graph:
 plt.savefig(sys.stdout.buffer)
 sys.stdout.flush()
