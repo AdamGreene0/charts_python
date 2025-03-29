@@ -5,12 +5,14 @@ import matplotlib
 
 matplotlib.use('Agg')
 
-import matplotlib.pyplot as plt
-import numpy as np
+import matplotlib.pyplot as plt #changing pyplot to workable function
+import numpy as np 
 
 #--beginning of y point work--
+
 #note chart automatically goes to the highest y value unless explicitly changed
-ypoints = np.array([2, 7, 1, 19])
+
+ypoints = np.array([2, 7, 1, 19,4]) #our points to plot, very cool to think of how we will eventually have to automically import data
 
 plt.plot(ypoints, color = 'b') #b for blue, r for red so it's probably one letter for all the primary colors
 
@@ -20,7 +22,7 @@ plt.plot(ypoints, color = 'b') #b for blue, r for red so it's probably one lette
 #note:x seems to have a default creator unless explicity named which seems nice
 #~~~end of x point work~~~
 
-plt.show()#kind of a misnomer more of a green light to show because on compilation nothing will show without the bottom two lines
+plt.show() #kind of a misnomer more of a green light to show because on compilation nothing will show without the bottom two lines
 
 #Two  lines to make our compiler output the chart/graph:
 plt.savefig(sys.stdout.buffer)
