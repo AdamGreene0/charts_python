@@ -1,3 +1,4 @@
+#note there is not a special command to add another line, just line creation with a new variable name 
 
 #compiler = https://www.w3schools.com/python/trypython.asp?filename=demo_compiler 
 
@@ -16,18 +17,19 @@ import numpy as np #changing numpy into a workable function, numpy is short for 
 
 #--beginning of line0--
 
-line0_points= np.array([2, 7, 1, 19,4]) #first line
+line0_points= np.array([2, 7, 70, 19,4]) #first line's points
 
-plt.plot(line0_points, color = 'g', linestyle = 'dotted') #line 01 formatting
+plt.plot(line0_points, color = '#000000', linestyle = 'dotted', linewidth = '7') #line 01 formatting
 
 #--end of  of line0 --
 
 
+
 #--beginning of line1--
 
-line1_points= np.array([10, 27, 5, 42,84]) #first line
+line1_points= np.array([10, 27, 5, 42,84]) #second line's points
 
-plt.plot(line1_points, color = '#FF0000') #line 01 formatting
+plt.plot(line1_points, color = '#FFD700', linewidth = '7') #line 01 formatting
 
 #--end of  of line1 --
 
