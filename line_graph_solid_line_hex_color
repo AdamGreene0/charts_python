@@ -19,7 +19,7 @@ import numpy as np #changing numpy into a workable function, numpy is short for 
 
 ypoints = np.array([20, 70, 10, 90,40]) #our points to plot, very cool to think of how we will eventually have to automically import data
 
-plt.plot(ypoints,linewidth='16', color = '#CC5500') #c = instead of color = also works
+plt.plot(ypoints,linewidth='16', color = '#89CFF0') #c = instead of color = also works
 
 #--end of y point work --
 
