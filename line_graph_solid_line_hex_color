@@ -1,0 +1,36 @@
+#changes coming dont use this yet
+#compiler = https://www.w3schools.com/python/trypython.asp?filename=demo_compiler 
+
+#--beginning of imports without assigning them to any roles--
+import sys
+import matplotlib
+#--end of imports without assigning them to any roles--
+
+matplotlib.use('Agg') #In Matplotlib, matplotlib.use('agg') sets the backend to 'agg', which is a non-interactive backend for rendering images. This means that instead of displaying plots on the screen, Matplotlib will render them to files (like PNG, JPG, etc.). 
+
+
+import matplotlib.pyplot as plt #changing pyplot to workable function, Pyplot is a module in the Matplotlib library in Python used for creating visualizations. 
+import numpy as np #changing numpy into a workable function, numpy is short for numerical python, did not want to waste your time with the full definition here but it googles well(wink).
+
+
+#--beginning of y point work--
+
+#note chart automatically goes to the highest y value unless explicitly changed
+
+ypoints = np.array([2, 7, 1, 19,4]) #our points to plot, very cool to think of how we will eventually have to automically import data
+
+plt.plot(ypoints, color = 'g', linestyle = 'dotted') #g for green, b for blue, r for red so it's probably one letter for all the primary colors
+
+#--end of y point work --
+
+#~~~beginning of x point work~~~
+#note:x seems to have a default creator unless explicity named which seems nice
+#~~~end of x point work~~~
+
+plt.show() #kind of a misnomer more of a green light to show because on compilation nothing will show without the bottom two lines
+
+#Two  lines to make our compiler output the chart/graph:
+
+plt.savefig(sys.stdout.buffer) #savefig makes this one self explanatory until further changes need to be made
+
+sys.stdout.flush() #In Python, sys.stdout.flush() is a method used to immediately write the contents of the output buffer to the standard output stream (typically the console). The standard output is often buffered, meaning that data is collected in a temporary storage area before being written to the output device. This buffering can improve performance by reducing the number of write operations, but it can also cause delays in displaying output.
