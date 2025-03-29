@@ -1,3 +1,4 @@
+#dont use that
 
 #compiler = https://www.w3schools.com/python/trypython.asp?filename=demo_compiler 
 
@@ -13,15 +14,19 @@ import matplotlib.pyplot as plt #changing pyplot to workable function, Pyplot is
 import numpy as np #changing numpy into a workable function, numpy is short for numerical python, did not want to waste your time with the full definition here but it googles well(wink).
 
 
-#--beginning of y point work--
+#--beginning of line0--
 
 #note chart automatically goes to the highest y value unless explicitly changed
 
-ypoints = np.array([2, 7, 1, 19,4]) #our points to plot, very cool to think of how we will eventually have to automically import data
+line0_points= np.array([2, 7, 1, 19,4]) #first line
 
-plt.plot(ypoints, color = 'g', linestyle = 'dotted') #g for green, b for blue, r for red so it's probably one letter for all the primary colors
+plt.plot(line0_points, color = 'g', linestyle = 'dotted') #line 01 formatting
 
-#--end of y point work --
+#--end of  of line0 --
+
+
+
+
 
 #~~~beginning of x point work~~~
 #note:x seems to have a default creator unless explicity named which seems nice
