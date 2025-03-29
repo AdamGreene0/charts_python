@@ -1,7 +1,3 @@
-#library:matplotlib
-
-#solid line
-
 #--beginning of imports without assigning them to any roles--
 import sys
 import matplotlib
@@ -12,10 +8,19 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 
-ypoints = np.array([3, 8, 1, 10])
+#--beginning of y point work--
+#note chart automatically goes to the highest y value unless explicitly changed
+ypoints = np.array([2, 7, 1, 19])
 
 plt.plot(ypoints, color = 'b') #b for blue, r for red so it's probably one letter for all the primary colors
-plt.show()
+
+#--end of y point work --
+
+#~~~beginning of x point work~~~
+#note:x seems to have a default creator unless explicity named which seems nice
+#~~~end of x point work~~~
+
+plt.show()#kind of a misnomer more of a green light to show because on compilation nothing will show without the bottom two lines
 
 #Two  lines to make our compiler output the chart/graph:
 plt.savefig(sys.stdout.buffer)
