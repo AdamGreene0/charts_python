@@ -27,5 +27,7 @@ plt.plot(ypoints, color = 'b') #b for blue, r for red so it's probably one lette
 plt.show() #kind of a misnomer more of a green light to show because on compilation nothing will show without the bottom two lines
 
 #Two  lines to make our compiler output the chart/graph:
+
 plt.savefig(sys.stdout.buffer) #savefig makes this one self explanatory until further changes need to be made
-sys.stdout.flush()
+
+sys.stdout.flush() #In Python, sys.stdout.flush() is a method used to immediately write the contents of the output buffer to the standard output stream (typically the console). The standard output is often buffered, meaning that data is collected in a temporary storage area before being written to the output device. This buffering can improve performance by reducing the number of write operations, but it can also cause delays in displaying output.
