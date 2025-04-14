@@ -1,0 +1,26 @@
+import matplotlib.pyplot as plt
+
+# Example data: Best-selling laptops of 2025 by profits (in millions)
+laptops = ['MacBook Pro M3', 'Dell XPS 15', 'HP Spectre x360', 'Lenovo Yoga 9i', 'Asus ROG Zephyrus']
+profits = [2500, 1800, 1600, 1500, 1400]  # in millions
+
+# Assign a different color to each bar
+colors = ['#FF5733', '#33C1FF', '#8D33FF', '#33FF57', '#FFC300']
+
+# Create the bar chart
+plt.figure(figsize=(10, 6))
+bars = plt.bar(laptops, profits, color=colors)
+
+# Add labels and title
+plt.xlabel('Laptop Model')
+plt.ylabel('Profit (in millions USD)')
+plt.title('Best-Selling Laptops of 2025 by Profits')
+plt.xticks(rotation=45, ha='right')
+
+# Add profit labels on top of each bar
+for bar in bars:
+    yval = bar.get_height()
+    plt.text(bar.get_x() + bar.get_width()/2, yval + 50, f'{yval}', ha='center', va='bottom')
+
+plt.tight_layout()
+plt.show()
