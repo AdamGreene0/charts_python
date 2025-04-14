@@ -1,0 +1,37 @@
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
+
+# Data: Animated movie profits (in millions)
+movies = ['Frozen II', 'Incredibles 2', 'Minions', 'Toy Story 4', 'Zootopia']
+profits = [1450, 1243, 1159, 1073, 1023]
+
+# Bar positions
+x_pos = np.arange(len(movies))
+y_pos = np.zeros(len(movies))  # Y position (all zero for single row)
+z_pos = np.zeros(len(movies))  # Z position (base of bars)
+
+# Bar dimensions
+dx = np.ones(len(movies))      # Width
+dy = np.ones(len(movies))      # Depth
+dz = profits                   # Height = profit
+
+# Different colors for each bar
+colors = ['red', 'green', 'blue', 'orange', 'purple']
+
+# Create figure and 3D axis
+fig = plt.figure(figsize=(10, 7))
+ax = fig.add_subplot(111, projection='3d')
+
+# Draw bars with different colors
+ax.bar3d(x_pos, y_pos, z_pos, dx, dy, dz, color=colors)
+
+# Set labels and title
+ax.set_xticks(x_pos)
+ax.set_xticklabels(movies, rotation=45, ha='right')
+ax.set_ylabel('Category')
+ax.set_zlabel('Profit (in millions)')
+ax.set_title('3D Bar Chart of Animated Movie Profits')
+
+plt.tight_layout()
+plt.show()
