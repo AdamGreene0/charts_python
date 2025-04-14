@@ -1,1 +1,16 @@
-#
+#ide to compile: Google colab 
+
+import matplotlib.pyplot as plt
+
+# Example data: Video game profits in millions
+games = ['Call of Duty', 'FIFA', 'GTA V', 'Minecraft', 'Fortnite']
+profits = [3000, 2500, 6000, 2800, 4000]  # in millions
+
+# Plot pie chart
+plt.figure(figsize=(8, 8))
+plt.pie(profits, labels=games, autopct='%1.1f%%', startangle=140)
+plt.title('Video Game Profits')
+plt.axis('equal')  # Equal aspect ratio ensures the pie chart is circular.
+
+# Show chart
+plt.show()
