@@ -1,0 +1,18 @@
+import matplotlib.pyplot as plt
+
+# Example data: Digital comic book profits in millions
+comics = ['Marvel', 'DC', 'Manga', 'Webtoons', 'Indie']
+profits = [450, 300, 600, 250, 100]  # in millions
+
+# Colors for better 3D effect
+colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99','#c2c2f0']
+
+# Plot
+plt.figure(figsize=(8, 8))
+plt.pie(profits, labels=comics, autopct='%1.1f%%', startangle=150,
+        colors=colors, shadow=True, explode=(0.05, 0.05, 0.1, 0.05, 0.05))
+
+plt.title('Digital Comic Book Profits')
+plt.axis('equal')  # Keep the pie chart circular
+
+plt.show()
