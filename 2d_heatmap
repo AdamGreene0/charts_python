@@ -1,0 +1,28 @@
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+# Create sample data (task completions per team per week)
+data = {
+    'Week 1': [5, 7, 3, 4],
+    'Week 2': [6, 8, 4, 5],
+    'Week 3': [7, 6, 5, 6],
+    'Week 4': [8, 9, 6, 7]
+}
+teams = ['Art Team', 'Dev Team', 'QA Team', 'Audio Team']
+
+df = pd.DataFrame(data, index=teams)
+
+# Create the heatmap
+plt.figure(figsize=(8, 5))
+sns.heatmap(df, annot=True, cmap='YlGnBu', linewidths=0.5)
+
+# Customize
+plt.title('Task Completion Heatmap by Team and Week')
+plt.xlabel('Week')
+plt.ylabel('Team')
+plt.tight_layout()
+
+plt.show()
