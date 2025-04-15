@@ -1,0 +1,38 @@
+import matplotlib.pyplot as plt
+import numpy as np
+from mpl_toolkits.mplot3d import Axes3D
+
+# Data
+years = np.array([2020, 2021, 2022, 2023, 2024])
+eugene_rain_days = np.array([14, 13, 15, 12, 13])
+portland_rain_days = np.array([15, 16, 14, 13, 14])
+
+# Setup for 3D bars
+x_pos = np.concatenate([years, years])         # X axis: years
+y_pos = np.array([0]*5 + [1]*5)                # Y axis: 0 = Eugene, 1 = Portland
+z_pos = np.zeros_like(x_pos)                   # Z axis start at 0
+
+dx = dy = 0.4                                   # Width/depth of bars
+dz = np.concatenate([eugene_rain_days, portland_rain_days])  # Height of bars
+
+# Colors for each city
+colors = ['skyblue']*5 + ['salmon']*5
+
+# Plotting
+fig = plt.figure(figsize=(10, 6))
+ax = fig.add_subplot(111, projection='3d')
+ax.bar3d(x_pos, y_pos, z_pos, dx, dy, dz, color=colors)
+
+# Axis formatting
+ax.set_xlabel('Year')
+ax.set_ylabel('City')
+ax.set_zlabel('Avg Rainy Days in April')
+
+ax.set_xticks(years)
+ax.set_yticks([0.2, 1.2])
+ax.set_yticklabels(['Eugene', 'Portland'])
+
+ax.set_title('3D Histogram: Avg April Rainy Days\nEugene vs. Portland (2020–2024)')
+
+plt.tight_layout()
+plt.show()
