@@ -1,0 +1,17 @@
+
+import yfinance as yf
+import matplotlib.pyplot as plt
+
+# Download historical stock data (e.g., Apple)
+stock = yf.download("AAPL", start="2023-01-01", end="2024-01-01")
+
+# Plot the closing price
+plt.figure(figsize=(12, 6))
+plt.plot(stock.index, stock['Close'], label='AAPL Closing Price', color='blue')
+plt.title('Apple Stock Price (2023)')
+plt.xlabel('Date')
+plt.ylabel('Price (USD)')
+plt.grid(True)
+plt.legend()
+plt.tight_layout()
+plt.show()
