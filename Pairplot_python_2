@@ -1,0 +1,19 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Load iris dataset
+iris = sns.load_dataset("iris")
+
+# Filter only Setosa and Versicolor for red and purple colors
+iris_subset = iris[iris['species'].isin(['setosa', 'versicolor'])]
+
+# Map species to custom color labels
+palette = {'setosa': 'red', 'versicolor': 'purple'}
+
+# Create the pair plot
+sns.pairplot(iris_subset, hue='species', palette=palette)
+
+# Show plot
+plt.suptitle('Iris Dataset: Setosa (Red) vs Versicolor (Purple)', y=1.02)
+plt.show()
