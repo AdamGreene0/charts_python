@@ -1,0 +1,25 @@
+import matplotlib.pyplot as plt
+
+# Example data (replace with actual figures as needed)
+years = [2020, 2021, 2022, 2023, 2024]
+python_ds_jobs = [18000, 22000, 27000, 31000, 35000]      # Python data science jobs
+unity_jobs = [12000, 15000, 17000, 20000, 22000]           # Unity developer jobs
+
+# Create the scatter plot
+plt.figure(figsize=(9, 6))
+plt.scatter(years, python_ds_jobs, color='green', label='Python Data Science Jobs', s=100, edgecolors='black')
+plt.scatter(years, unity_jobs, color='purple', label='Unity Developer Jobs', s=100, edgecolors='black')
+
+# Optionally connect with dashed lines
+plt.plot(years, python_ds_jobs, color='green', linestyle='dashed')
+plt.plot(years, unity_jobs, color='purple', linestyle='dashed')
+
+# Labels and title
+plt.title('Job Trends (2020–2024): Python Data Science vs Unity Developer')
+plt.xlabel('Year')
+plt.ylabel('Number of Jobs')
+plt.legend()
+plt.grid(True, linestyle='--', alpha=0.5)
+plt.tight_layout()
+
+plt.show()
