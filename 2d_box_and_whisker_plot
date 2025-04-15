@@ -1,0 +1,21 @@
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Example salary data in USD (you can replace these with real data)
+entry_level_salaries = [55000, 60000, 58000, 62000, 59000, 61000, 57000, 63000, 59500]
+senior_salaries = [110000, 120000, 125000, 115000, 130000, 118000, 122000, 127000, 135000]
+
+# Combine data
+salaries = [entry_level_salaries, senior_salaries]
+labels = ['Entry Level', 'Senior']
+
+# Create the plot
+plt.figure(figsize=(8, 6))
+sns.boxplot(data=salaries)
+plt.xticks([0, 1], labels)
+plt.ylabel('Annual Salary (USD)')
+plt.title('Remote Python Developer Salaries: Entry vs Senior Level')
+plt.grid(True, linestyle='--', alpha=0.5)
+plt.tight_layout()
+
+plt.show()
