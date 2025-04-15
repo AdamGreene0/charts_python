@@ -1,0 +1,35 @@
+import matplotlib.pyplot as plt
+
+# Months for the x-axis
+months = ['Jan', 'Feb', 'Mar', 'Apr', 'May']
+
+# Fictional sales data (number of stuffed crust pizzas sold per month)
+sales_data = {
+    'Pizza Hut': [500, 550, 530, 580, 600],
+    'Little Caesars': [450, 470, 460, 490, 500],
+    'Papa John\'s': [300, 320, 310, 330, 340],
+    'Domino\'s': [200, 220, 210, 230, 240],
+    'Cicis': [100, 110, 105, 115, 120]
+}
+
+# Set up the plot
+plt.figure(figsize=(10, 6))
+
+# Plot each pizza chain's data with a unique color
+for name, sales in sales_data.items():
+    plt.plot(months, sales, marker='o', label=name)
+
+# Add labels and title
+plt.title('Best Selling Stuffed Crust Pizzas in Tampa (Fictional Data)', fontsize=14)
+plt.xlabel('Month', fontsize=12)
+plt.ylabel('Stuffed Crust Pizzas Sold', fontsize=12)
+
+# Add legend
+plt.legend(title='Pizza Chain')
+
+# Add grid
+plt.grid(True)
+
+# Show the plot
+plt.tight_layout()
+plt.show()
