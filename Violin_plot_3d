@@ -1,0 +1,46 @@
+import plotly.graph_objects as go
+import numpy as np
+import pandas as pd
+
+# Mock data: touchdowns per game (replace with real stats)
+np.random.seed(2025)
+hurts_tds = np.random.normal(loc=1.7, scale=0.5, size=17)  # 17 games
+mahomes_tds = np.random.normal(loc=2.3, scale=0.6, size=17)
+
+# Create dataframe
+df = pd.DataFrame({
+    'Player': ['Jalen Hurts'] * len(hurts_tds) + ['Patrick Mahomes'] * len(mahomes_tds),
+    'Touchdowns': np.concatenate([hurts_tds, mahomes_tds])
+})
+
+# Create violin plots
+fig = go.Figure()
+
+fig.add_trace(go.Violin(
+    y=df[df['Player'] == 'Jalen Hurts']['Touchdowns'],
+    name='Jalen Hurts',
+    side='negative',
+    line_color='blue',
+    box_visible=True,
+    meanline_visible=True
+))
+
+fig.add_trace(go.Violin(
+    y=df[df['Player'] == 'Patrick Mahomes']['Touchdowns'],
+    name='Patrick Mahomes',
+    side='positive',
+    line_color='red',
+    box_visible=True,
+    meanline_visible=True
+))
+
+# Layout
+fig.update_layout(
+    title='Touchdowns per Game (2024 Season): Hurts vs Mahomes',
+    violingap=0,
+    violinmode='overlay',
+    yaxis_title='Touchdowns per Game',
+    template='plotly_white'
+)
+
+fig.show()
