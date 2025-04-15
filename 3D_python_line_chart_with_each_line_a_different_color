@@ -1,0 +1,47 @@
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
+
+# Setup: Months and Pizza Chains
+months = ['Jan', 'Feb', 'Mar', 'Apr', 'May']
+pizza_chains = ['Pizza Hut', 'Little Caesars', 'Papa John\'s', 'Domino\'s', 'Cicis']
+
+# Fake sales data [rows = chains, cols = months]
+sales = np.array([
+    [500, 550, 530, 580, 600],   # Pizza Hut
+    [450, 470, 460, 490, 500],   # Little Caesars
+    [300, 320, 310, 330, 340],   # Papa John’s
+    [200, 220, 210, 230, 240],   # Domino’s
+    [100, 110, 105, 115, 120],   # Cicis
+])
+
+# Map chain names to numerical y-values
+y_values = np.arange(len(pizza_chains))
+x_values = np.arange(len(months))
+
+# Create 3D plot
+fig = plt.figure(figsize=(12, 7))
+ax = fig.add_subplot(111, projection='3d')
+
+# Plot each pizza chain's sales data
+colors = ['red', 'orange', 'green', 'blue', 'purple']
+for i, y in enumerate(y_values):
+    ax.plot(x_values, [y]*len(x_values), sales[i], label=pizza_chains[i], color=colors[i], marker='o')
+
+# Axis labels and ticks
+ax.set_xlabel('Month')
+ax.set_ylabel('Pizza Chain')
+ax.set_zlabel('Stuffed Crust Pizzas Sold')
+
+ax.set_xticks(x_values)
+ax.set_xticklabels(months)
+ax.set_yticks(y_values)
+ax.set_yticklabels(pizza_chains)
+
+# Title and legend
+ax.set_title('Best Selling Stuffed Crust Pizzas in Tampa (3D View)')
+ax.legend()
+
+# Show the plot
+plt.tight_layout()
+plt.show()
