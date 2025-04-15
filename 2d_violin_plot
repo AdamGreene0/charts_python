@@ -1,0 +1,25 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+# Example mock data
+np.random.seed(2025)
+kanban_tasks = np.random.poisson(lam=35, size=50)
+scrum_tasks = np.random.poisson(lam=40, size=50)
+
+# Create DataFrame
+df = pd.DataFrame({
+    'Method': ['Kanban'] * len(kanban_tasks) + ['Scrum'] * len(scrum_tasks),
+    'Tasks Completed': np.concatenate([kanban_tasks, scrum_tasks])
+})
+
+# Create violin plot
+plt.figure(figsize=(8, 6))
+sns.violinplot(x='Method', y='Tasks Completed', data=df, palette='muted')
+plt.title('Tasks Completed in 2025: Kanban vs Scrum')
+plt.xlabel('Project Management Method')
+plt.ylabel('Number of Tasks Completed')
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.tight_layout()
+plt.show()
