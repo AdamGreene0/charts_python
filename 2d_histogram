@@ -1,17 +1,26 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Simulated average April temperatures (°F) for 2015–2024
-eugene_temps = np.array([55.0, 56.2, 57.5, 58.0, 58.8, 59.1, 60.2, 61.0, 62.3, 63.5])
-portland_temps = np.array([54.1, 54.5, 55.6, 56.3, 56.9, 57.5, 58.7, 59.4, 60.2, 61.0])
+# Data: years and average April temperatures for each city
+years = np.arange(2015, 2025)
+eugene_april_temps = [55.0, 56.2, 57.5, 58.0, 58.8, 59.1, 60.2, 61.0, 62.3, 63.5]
+portland_april_temps = [54.1, 54.5, 55.6, 56.3, 56.9, 57.5, 58.7, 59.4, 60.2, 61.0]
 
-# Create 2D histogram
-plt.figure(figsize=(8, 6))
-plt.hist2d(eugene_temps, portland_temps, bins=6, cmap='plasma')
-plt.colorbar(label='Frequency')
-plt.xlabel('Eugene Avg April Temp (°F)')
-plt.ylabel('Portland Avg April Temp (°F)')
-plt.title('2D Histogram: Eugene vs Portland April Temps (2015–2024)')
-plt.grid(True)
+# X positions for bars
+x = np.arange(len(years))
+width = 0.35  # width of the bars
+
+# Plot
+plt.figure(figsize=(12, 6))
+plt.bar(x - width/2, eugene_april_temps, width, label='Eugene', color='skyblue')
+plt.bar(x + width/2, portland_april_temps, width, label='Portland', color='salmon')
+
+# Labels and titles
+plt.xlabel('Year')
+plt.ylabel('Avg April Temp (°F)')
+plt.title('Average April Temperatures (2015–2024)\nEugene vs. Portland, Oregon')
+plt.xticks(x, years)
+plt.legend()
+plt.grid(axis='y', linestyle='--', alpha=0.6)
 plt.tight_layout()
 plt.show()
