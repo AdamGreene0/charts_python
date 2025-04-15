@@ -1,0 +1,43 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Simulated data over a sprint (15 days)
+dates = pd.date_range(start="2025-04-01", periods=15)
+data = {
+    'Ideas':        [30, 28, 25, 22, 20, 18, 15, 14, 13, 12, 10, 9, 8, 7, 5],
+    'Design':       [0, 2, 4, 6, 8, 10, 12, 11, 10, 9, 8, 7, 6, 5, 4],
+    'Development':  [0, 0, 1, 3, 5, 7, 10, 12, 13, 14, 14, 13, 11, 10, 8],
+    'Testing':      [0, 0, 0, 1, 2, 3, 4, 6, 8, 10, 12, 13, 14, 15, 16],
+    'Released':     [0, 0, 0, 0, 0, 1, 3, 5, 7, 9, 11, 13, 15, 18, 20]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data, index=dates)
+
+# Create stacked area chart
+fig, ax = plt.subplots(figsize=(12, 6))
+
+# From bottom to top for stacking
+stack_data = [
+    df['Released'],
+    df['Testing'],
+    df['Development'],
+    df['Design'],
+    df['Ideas']
+]
+labels = ['Released', 'Testing', 'Development', 'Design', 'Ideas']
+colors = ['#4CAF50', '#FF9800', '#2196F3', '#9C27B0', '#BDBDBD']
+
+# Plot the stacked area chart
+ax.stackplot(df.index, stack_data, labels=labels, colors=colors)
+
+# Formatting
+ax.set_title("Cumulative Flow Diagram - Game Development Workflow")
+ax.set_xlabel("Date")
+ax.set_ylabel("Number of Tasks")
+ax.legend(loc='upper left')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.grid(True)
+
+plt.show()
