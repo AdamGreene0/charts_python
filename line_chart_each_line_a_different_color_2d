@@ -1,3 +1,6 @@
+#pupose:
+#build a 2d line chart in python with each line a different color
+
 import matplotlib.pyplot as plt
 
 # Months for the x-axis
