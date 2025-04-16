@@ -1,0 +1,38 @@
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import pandas as pd
+import numpy as np
+
+# Simulated players and game dates
+players = ['Aaron Judge', 'Shohei Ohtani', 'Mookie Betts']
+games = pd.date_range(start='2023-04-01', periods=30, freq='D')  # 30 games
+game_nums = np.arange(len(games))
+
+# Simulated home run data (per game)
+np.random.seed(42)
+home_runs = {
+    player: np.random.poisson(lam=np.random.uniform(0.2, 0.5), size=len(games))
+    for player in players
+}
+
+# Create 3D plot
+fig = plt.figure(figsize=(14, 8))
+ax = fig.add_subplot(111, projection='3d')
+
+# Plot home runs for each player
+for i, player in enumerate(players):
+    y = np.full_like(game_nums, i)
+    z = home_runs[player]
+    ax.plot(game_nums, y, z, label=player)
+
+# Formatting
+ax.set_xlabel('Game Number')
+ax.set_ylabel('Player')
+ax.set_zlabel('Home Runs')
+ax.set_yticks(range(len(players)))
+ax.set_yticklabels(players)
+ax.set_title('3D Time Series of Home Runs per Game (Simulated MLB Players)')
+ax.legend()
+
+plt.tight_layout()
+plt.show()
