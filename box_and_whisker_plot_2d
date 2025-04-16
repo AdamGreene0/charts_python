@@ -1,3 +1,6 @@
+#purpose:
+#build a 2d box and whisker plot in python
+
 import matplotlib.pyplot as plt
 import seaborn as sns
 
