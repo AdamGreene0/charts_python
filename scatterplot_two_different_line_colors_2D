@@ -1,3 +1,6 @@
+#purpose:
+#code to build a 2d scatterplot with two different line colors in python
+
 import matplotlib.pyplot as plt
 
 # Example data (replace with actual figures as needed)
