@@ -1,3 +1,6 @@
+#purpose:
+#bar chart code each bar a different color 2d
+
 import matplotlib.pyplot as plt
 
 # Example data: Best-selling laptops of 2025 by profits (in millions)
