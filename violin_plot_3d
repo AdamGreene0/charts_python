@@ -1,3 +1,6 @@
+#purpose:
+#build a 3d violin plot in python
+
 import plotly.graph_objects as go
 import numpy as np
 import pandas as pd
