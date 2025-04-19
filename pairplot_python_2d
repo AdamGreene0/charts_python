@@ -1,3 +1,6 @@
+#purpose:
+#build a 2d pairplot in python
+
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
